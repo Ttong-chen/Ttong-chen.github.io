@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>和小影互动</title>
+      <style >
+        #game-container{
+           width:400px;
+           margin:20px auto;
+           text-align: center;
+           font-family: Arial,sans-serif;
+        }
+        #character{
+           width: 400px;
+           height:600px;
+           margin: 20px;
+           cursor: pointer;
+           transition: transform 0.2s;
+        }
+        #happy{
+          padding: 10px 20px;
+          margin: 10px;
+          font-size: 16px;
+          cursor: pointer;
+          background-color:green;
+          color: white;
+          border: none;
+          border-radius: 5px;
+      }
+
+      #angry{
+          padding: 10px 20px;
+          margin: 10px;
+          font-size: 16px;
+          cursor: pointer;
+          background-color: red;
+          color: black;
+          border: none;
+          border-radius: 5px;
+      }
+       #happy:hover{background-color: green;}
+       #angry:hover{background-color: red;}
+      </style>
+  </head>
+  <body>
+    <div id="game-container">
+      <h1>放只小影在这不要干坏事哦</h1>
+      <img id="character" src="normal.PNG">
+         <div>
+           <button id="happy" type="button" name="给他排球">给他排球</button>
+           <button id="angry" type="button" name="干点坏事">干点坏事</button>
+         </div>
+    </div>
+<script>
+   const character=document.getElementById('character');
+   const happy=document.getElementById('happy');
+   const angry=document.getElementById('angry');
+   const expressions={
+     normal:'normal.PNG',
+     happy:'happy.PNG',
+     angry:'angry.PNG'
+
+   };
+         happy.addEventListener('click', function() {
+           character.src = expressions.happy;
+         });
+
+         angry.addEventListener('click', function() {
+           character.src = expressions.angry;
+         });
+</script>
+  </body>
+</html>
